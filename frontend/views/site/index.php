@@ -250,6 +250,10 @@ $this->title = 'Clutera | Jasa pembuatan web dan android';
                         </div>
                         <div class="col-lg-9">
                             <div class="row">
+
+                                <?php
+                                echo "test model ".$models->post_title;
+                                 for($a=0;$a<10;$a++){ ?>
                                 <div class="col-6 col-lg-4 col-sm-6">
                                     <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".3s">
                                         <div class="card-img-container">
@@ -263,7 +267,8 @@ $this->title = 'Clutera | Jasa pembuatan web dan android';
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-lg-4 col-sm-6">
+                                <?php }?>
+                                <!-- <div class="col-6 col-lg-4 col-sm-6">
                                     <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".4s">
                                         <div class="card-img-container">
                                             <img class="card-img" src="https://placehold.it/600x400" alt="Card image">
@@ -301,7 +306,7 @@ $this->title = 'Clutera | Jasa pembuatan web dan android';
                                             <p class="card-subtitle verso-transition">Wonderful client</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
