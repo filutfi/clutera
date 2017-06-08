@@ -262,7 +262,7 @@ $this->title = 'Clutera | Jasa pembuatan web dan android';
                                             </div>
                                             <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
                                                 <h5 class="card-title verso-transition">
-                                                    <a href="<?=Url::to(['site/about']);?>"><?=$rs->post_title?></a>
+                                                    <a href="<?=Url::to(['site/about','link'=>$rs->link]);?>"><?=$rs->post_title?></a>
                                                 </h5>
                                                 <p class="card-subtitle verso-transition"><?=$rs->short_desc?></p>
                                             </div>
