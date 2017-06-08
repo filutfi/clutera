@@ -28,6 +28,7 @@ use yii\widgets\Pjax;
     ]); ?>
     <div class="col-md-8">
       <?= $form->field($model, 'post_title')->textInput() ?>
+      <?= $form->field($model, 'short_desc')->textInput() ?>
       <?= $form->field($model, 'post_content')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'standart',

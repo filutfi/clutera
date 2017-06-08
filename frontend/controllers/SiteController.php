@@ -7,12 +7,13 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use frontend\models\Post;
+
 
 /**
  * Site controller
@@ -73,11 +74,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        //return $this->render('index');
-        $model = new Post();
-        return $this->render('index', [
-            'model' => $model,
-        ]);
+      return $this->render('index');
+      // $model= new Post();
+      //   return $this->render('index', [
+      //       'model' => $model,
+      //   ]);
+      //
+        // $dataProvider = new ActiveDataProvider([
+        //     'query' => Post::find()->orderBy('post_date desc'),
+        // ]);
+        // return $this->render('index', [
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**

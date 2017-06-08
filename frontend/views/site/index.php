@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use frontend\models\Post;
 /* @var $this yii\web\View */
 
 $this->title = 'Clutera | Jasa pembuatan web dan android';
@@ -252,61 +253,23 @@ $this->title = 'Clutera | Jasa pembuatan web dan android';
                             <div class="row">
 
                                 <?php
-                                echo "test model ".$models->post_title;
-                                 for($a=0;$a<10;$a++){ ?>
-                                <div class="col-6 col-lg-4 col-sm-6">
-                                    <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".3s">
-                                        <div class="card-img-container">
-                                            <img class="card-img" src="pictures/grafitalk.jpg" alt="Card image">
-                                        </div>
-                                        <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
-                                            <h5 class="card-title verso-transition">
-                                                <a href="<?=Url::to(['site/about']);?>">Headquarters</a>
-                                            </h5>
-                                            <p class="card-subtitle verso-transition">Lovely View Lovely ViewLovely ViewLovely ViewLovely ViewLovely ViewLovely ViewLovely View</p>
+                                  $rsx=Post::find()->orderBy("post_date desc")->all();
+                                  foreach ($rsx as $rs) { ?>
+                                    <div class="col-6 col-lg-4 col-sm-6">
+                                        <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".3s">
+                                            <div class="card-img-container">
+                                                <img class="card-img" src="../../cluadmin/public_html/uploads/<?=$rs->gambar?>" alt="Card image">
+                                            </div>
+                                            <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
+                                                <h5 class="card-title verso-transition">
+                                                    <a href="<?=Url::to(['site/about']);?>"><?=$rs->post_title?></a>
+                                                </h5>
+                                                <p class="card-subtitle verso-transition"><?=$rs->short_desc?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php }?>
-                                <!-- <div class="col-6 col-lg-4 col-sm-6">
-                                    <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".4s">
-                                        <div class="card-img-container">
-                                            <img class="card-img" src="https://placehold.it/600x400" alt="Card image">
-                                        </div>
-                                        <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
-                                            <h5 class="card-title verso-transition">
-                                                <a href="project.html">Department</a>
-                                            </h5>
-                                            <p class="card-subtitle verso-transition">Creating the Future</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-4 col-sm-6">
-                                    <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".6s">
-                                        <div class="card-img-container">
-                                            <img class="card-img" src="https://placehold.it/600x400" alt="Card image">
-                                        </div>
-                                        <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
-                                            <h5 class="card-title verso-transition">
-                                                <a href="project.html">Featured Project</a>
-                                            </h5>
-                                            <p class="card-subtitle verso-transition">A great Success</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-4 col-sm-6 hidden-lg-up">
-                                    <div class="card verso-shadow-15 verso-shadow-hover-20 verso-transition verso-mb-3 verso-os-animation verso-os-animation" data-os-animation="fadeIn" data-os-animation-delay=".7s">
-                                        <div class="card-img-container">
-                                            <img class="card-img" src="https://placehold.it/600x800" alt="Card image">
-                                        </div>
-                                        <div class="card-img-overlay card-img-overlay-bottom card-img-overlay-on-hover verso-transition">
-                                            <h5 class="card-title verso-transition">
-                                                <a href="project.html">Amazing Work</a>
-                                            </h5>
-                                            <p class="card-subtitle verso-transition">Wonderful client</p>
-                                        </div>
-                                    </div>
-                                </div> -->
+
                             </div>
                         </div>
                     </div>
